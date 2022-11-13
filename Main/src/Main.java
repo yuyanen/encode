@@ -11,9 +11,11 @@ public class Main {
     static int offNum = 0; //class level Offset number
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);// To get input from keyboard
-        String str = "HELLO WORLD"; //Given Input String
-        System.out.println("Enter Offset: "); //Enter Offset character
-        char in = sc.next().charAt(0); //Read character
+        System.out.println("Please input plain text: ");
+        String str = sc.nextLine();     // Example Input String "HELLO WORLD";
+        System.out.println("Enter Offset: "); //Enter Offset character,example:B or F
+        char in = sc.nextLine().charAt(0); //Read character
+
         int offset = 0;
         for (int i = 0; i < 44; i++) { //Store offset character index in offset variable
             if (in == oriTable[i]) {
@@ -23,8 +25,8 @@ public class Main {
         }
         offChar = oriTable[offset]; //Store class level offset character
         offNum = offset;       //Store offset index
-        System.out.println("Encoded String:= " + in + Encode.encode(str)); //call public String encode(plaintext) method
-        System.out.println("Decoded String:= "+ Decode.decode(encodedString)); //call public String encode(plaintext) method
+        System.out.println("Encoded String:= " + in + Encode.encode(str)); //call public String encode(plainText) method
+        System.out.println("Decoded String:= "+ Decode.decode(encodedString)); //call public String decode(encodeText) method
 
     }
 }

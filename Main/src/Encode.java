@@ -3,12 +3,12 @@ public class Encode {
         char[] charArray = plaintext.toCharArray(); // convert plaintext to character array
 
         //To Get Offset Table based on Offset value
-        for (int j = 0; j < Main.offNum; j++) {
+        for (int i = 0; i < Main.offNum; i++) {
             char lastChar = Main.oriTable[Main.oriTable.length - 1]; //store last element of given array in lastChar variable
             int l = Main.oriTable.length; //Calculate length of array
             int last = Main.oriTable.length - 1;  // last character position
-            for (int i = l - 2; i >= 0; i--) { //Shift every character from beginning to end by one time
-                Main.oriTable[last] = Main.oriTable[i]; //store oriTable[i]th element in last location of array
+            for (int j = l - 2; j >= 0; j--) { //Shift every character from beginning to end by one time
+                Main.oriTable[last] = Main.oriTable[j]; //store oriTable[i]th element in last location of array
                 last--; //decrement last so all element till 1st will Shift to last
             }
             Main.oriTable[0] = lastChar; //Store last element of array at 1st location
